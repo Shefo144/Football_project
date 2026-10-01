@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football AI Scouting System</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Football AI Scouting System</h1>
+        <p>Find the right player using advanced filters</p>
+    </header>
+
+
+    <section class="filters">
+
+        <div class="filter">
+            <label>Position</label>
+
+            <select id="position">
+                <option value="">All Positions</option>
+                <option value="GK">GK</option>
+                <option value="CB">CB</option>
+                <option value="LB">LB</option>
+                <option value="RB">RB</option>
+                <option value="CM">CM</option>
+                <option value="CDM">CDM</option>
+                <option value="CAM">CAM</option>
+                <option value="LM">LM</option>
+                <option value="RM">RM</option>
+                <option value="LW">LW</option>
+                <option value="RW">RW</option>
+                <option value="ST">ST</option>
+                <option value="CF">CF</option>
+            </select>
+        </div>
+
+
+        <div class="filter">
+            <label>Min Age</label>
+            <input type="number" id="minAge" placeholder="Example: 18">
+        </div>
+
+        <div class="filter">
+            <label>Max Age</label>
+            <input type="number" id="maxAge" placeholder="Example: 25">
+        </div>
+
+        <div class="filter">
+            <label>Minimum OVR</label>
+            <input type="number" id="minOVR" placeholder="Example: 80">
+        </div>
+
+        <div class="filter">
+            <label>Minimum PAC</label>
+            <input type="number" id="minPAC" placeholder="Example: 80">
+        </div>
+
+        <div class="filter">
+            <label>Minimum SHO</label>
+            <input type="number" id="minSHO" placeholder="Example: 80">
+        </div>
+
+        <div class="filter">
+            <label>Minimum PAS</label>
+            <input type="number" id="minPAS" placeholder="Example: 80">
+        </div>
+
+        <div class="filter">
+            <label>Minimum DRI</label>
+            <input type="number" id="minDRI" placeholder="Example: 80">
+        </div>
+
+        <div class="filter">
+            <label>Minimum DEF</label>
+            <input type="number" id="minDEF" placeholder="Example: 70">
+        </div>
+
+        <div class="filter">
+            <label>Minimum PHY</label>
+            <input type="number" id="minPHY" placeholder="Example: 70">
+        </div>
+
+        <div class="filter">
+            <label>Acceleration</label>
+            <input type="number" id="minAcceleration">
+        </div>
+
+        <div class="filter">
+            <label>Sprint Speed</label>
+            <input type="number" id="minSprint">
+        </div>
+
+        <div class="filter">
+            <label>Finishing</label>
+            <input type="number" id="minFinishing">
+        </div>
+
+        <div class="filter">
+            <label>Shot Power</label>
+            <input type="number" id="minShotPower">
+        </div>
+
+        <div class="filter">
+            <label>Long Shots</label>
+            <input type="number" id="minLongShots">
+        </div>
+
+        <div class="filter">
+            <label>Vision</label>
+            <input type="number" id="minVision">
+        </div>
+
+        <div class="filter">
+            <label>Short Passing</label>
+            <input type="number" id="minShortPassing">
+        </div>
+
+        <div class="filter">
+            <label>Dribbling</label>
+            <input type="number" id="minDribbling">
+        </div>
+
+        <div class="filter">
+            <label>Ball Control</label>
+            <input type="number" id="minBallControl">
+        </div>
+
+        <div class="filter">
+            <label>Stamina</label>
+            <input type="number" id="minStamina">
+        </div>
+
+        <div class="filter">
+            <label>Strength</label>
+            <input type="number" id="minStrength">
+        </div>
+
+
+        <!-- DROPDOWNS -->
+
+        <div class="filter">
+            <label>Nation</label>
+
+            <select id="nation">
+                <option value="">All Nations</option>
+            </select>
+        </div>
+
+
+        <div class="filter">
+            <label>League</label>
+
+            <select id="league">
+                <option value="">All Leagues</option>
+            </select>
+        </div>
+
+
+        <div class="filter">
+            <label>Team</label>
+
+            <select id="team">
+                <option value="">All Teams</option>
+            </select>
+        </div>
+
+
+        <div class="filter">
+            <label>Preferred Foot</label>
+
+            <select id="preferredFoot">
+                <option value="">Both</option>
+                <option value="Left">Left</option>
+                <option value="Right">Right</option>
+            </select>
+        </div>
+
+    </section>
+
+
+    <div class="buttons">
+
+        <button onclick="searchPlayers()">
+            Search
+        </button>
+
+        <button onclick="resetFilters()" class="reset">
+            Reset
+        </button>
+
+    </div>
+
+
+    <h2 id="resultTitle">Players</h2>
+
+    <div id="playersContainer" class="players-container"></div>
+
+
+    <!-- PROFILE -->
+
+    <div id="profileModal" class="modal">
+
+        <div class="profile-box">
+
+            <button class="close" onclick="closeProfile()">
+                ×
+            </button>
+
+            <div id="profileContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>
